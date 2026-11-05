@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "title": "Fulgor Abstracto · Serviços de TI",
+    "description": "Serviços de TI, desenvolvimento de software e manutenção de servidores em Portugal."
+  },
+  "nav": {
+    "services": "Serviços",
+    "process": "Como trabalhamos",
+    "contact": "Contacto",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "toggleTheme": "Alternar tema",
+    "skipToContent": "Saltar para o conteúdo"
+  },
+  "hero": {
+    "eyebrow": "Software · Servidores · Suporte",
+    "titleStart": "Tecnologia que",
+    "titleHighlight": "funciona.",
+    "intro": "Desenvolvemos software à medida e mantemos os seus servidores e sistemas de TI estáveis, seguros e atualizados, para que se possa concentrar no seu negócio.",
+    "primaryCta": "Fale connosco",
+    "secondaryCta": "Ver serviços",
+    "statusLabel": "Estado dos sistemas",
+    "statusOk": "Todos os serviços operacionais"
+  },
+  "services": {
+    "eyebrow": "O que fazemos",
+    "title": "Serviços para quem precisa que a tecnologia simplesmente funcione",
+    "items": [
+      {
+        "title": "Desenvolvimento de software",
+        "text": "Aplicações web, APIs e integrações à medida, construídas para crescer com o seu negócio."
+      },
+      {
+        "title": "Manutenção de servidores",
+        "text": "Monitorização, atualizações, backups e segurança dos seus servidores, em cloud ou nas suas instalações."
+      },
+      {
+        "title": "Serviços de TI",
+        "text": "Suporte técnico, configuração de sistemas e apoio na escolha das ferramentas certas para a sua equipa."
+      }
+    ]
+  },
+  "benefits": {
+    "items": [
+      { "title": "Segurança primeiro", "text": "Boas práticas e atualizações em todas as etapas." },
+      { "title": "Resposta rápida", "text": "Problemas tratados antes de se tornarem crises." },
+      { "title": "Contacto direto", "text": "Fala com quem faz o trabalho, sem intermediários." },
+      { "title": "Sediados em Portugal", "text": "Atendimento em português e em inglês." }
+    ]
+  },
+  "process": {
+    "eyebrow": "Como trabalhamos",
+    "title": "Do primeiro contacto ao sistema em produção",
+    "steps": [
+      { "title": "Conversa", "text": "Percebemos o seu problema e o que precisa." },
+      { "title": "Proposta", "text": "Plano claro com âmbito, prazos e custos." },
+      { "title": "Execução", "text": "Desenvolvemos ou configuramos, com entregas frequentes." },
+      { "title": "Acompanhamento", "text": "Manutenção e suporte contínuos depois da entrega." }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Vamos construir algo juntos",
+    "text": "Tem um projeto em mente ou precisa de ajuda com os seus sistemas? Envie-nos uma mensagem e respondemos com brevidade.",
+    "location": "Portugal",
+    "locationLabel": "Localização",
+    "nameLabel": "Nome",
+    "namePlaceholder": "O seu nome",
+    "emailLabel": "Email",
+    "emailPlaceholder": "nome@empresa.pt",
+    "subjectLabel": "Assunto",
+    "subjectPlaceholder": "Novo projeto",
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Conte-nos o que precisa…",
+    "send": "Enviar mensagem",
+    "sending": "A enviar…",
+    "success": "Mensagem enviada! Entraremos em contacto em breve.",
+    "failure": "Não foi possível enviar a mensagem. Tente novamente mais tarde."
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados."
+  },
+  "language": {
+    "pt": "Português",
+    "en": "English"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "title": "Fulgor Abstracto · IT Services",
+    "description": "IT services, software development and server maintenance from Portugal."
+  },
+  "nav": {
+    "services": "Services",
+    "process": "How we work",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "toggleTheme": "Toggle theme",
+    "skipToContent": "Skip to content"
+  },
+  "hero": {
+    "eyebrow": "Software · Servers · Support",
+    "titleStart": "Technology that",
+    "titleHighlight": "just works.",
+    "intro": "We build custom software and keep your servers and IT systems stable, secure and up to date, so you can focus on your business.",
+    "primaryCta": "Get in touch",
+    "secondaryCta": "See services",
+    "statusLabel": "System status",
+    "statusOk": "All services operational"
+  },
+  "services": {
+    "eyebrow": "What we do",
+    "title": "Services for teams that need technology to simply work",
+    "items": [
+      {
+        "title": "Software development",
+        "text": "Custom web applications, APIs and integrations, built to grow with your business."
+      },
+      {
+        "title": "Server maintenance",
+        "text": "Monitoring, updates, backups and security for your servers, in the cloud or on premises."
+      },
+      {
+        "title": "IT services",
+        "text": "Technical support, system setup and help choosing the right tools for your team."
+      }
+    ]
+  },
+  "benefits": {
+    "items": [
+      { "title": "Security first", "text": "Good practices and updates at every step." },
+      { "title": "Fast response", "text": "Issues handled before they become crises." },
+      { "title": "Direct contact", "text": "Talk to the people doing the work, no middlemen." },
+      { "title": "Based in Portugal", "text": "Service in Portuguese and English." }
+    ]
+  },
+  "process": {
+    "eyebrow": "How we work",
+    "title": "From first contact to a system in production",
+    "steps": [
+      { "title": "Talk", "text": "We understand your problem and what you need." },
+      { "title": "Proposal", "text": "A clear plan with scope, timeline and cost." },
+      { "title": "Delivery", "text": "We build or configure, shipping often." },
+      { "title": "Follow-up", "text": "Ongoing maintenance and support after delivery." }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's build something together",
+    "text": "Have a project in mind or need help with your systems? Send us a message and we'll get back to you shortly.",
+    "location": "Portugal",
+    "locationLabel": "Location",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "name@company.com",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "New project",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us what you need…",
+    "send": "Send message",
+    "sending": "Sending…",
+    "success": "Message sent! We'll be in touch soon.",
+    "failure": "Could not send the message. Please try again later."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "language": {
+    "pt": "Português",
+    "en": "English"
+  }
+}

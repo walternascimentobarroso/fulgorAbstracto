@@ -1,0 +1,60 @@
+"use client";
+import { locales, type Dictionary, type Locale } from "../dictionaries";
+
+const STORAGE_KEY = "lang";
+
+export function detectLocale(): Locale {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (locales.includes(saved as Locale)) return saved as Locale;
+  return navigator.language.toLowerCase().startsWith("pt") ? "pt" : "en";
+}
+
+const PortugalFlag = () => (
+  <svg viewBox="0 0 28 20" className="h-5 w-7 rounded-sm" aria-hidden="true">
+    <rect width="28" height="20" fill="#FF0000" />
+    <rect width="11.2" height="20" fill="#006600" />
+    <circle cx="11.2" cy="10" r="3.6" fill="#FFCC00" />
+  </svg>
+);
+
+const UsaFlag = () => (
+  <svg viewBox="0 0 28 20" className="h-5 w-7 rounded-sm" aria-hidden="true">
+    <rect width="28" height="20" fill="#B22234" />
+    {[1, 3, 5, 7, 9, 11].map((stripe) => (
+      <rect key={stripe} y={(stripe * 20) / 13} width="28" height={20 / 13} fill="#fff" />
+    ))}
+    <rect width="12" height={(7 * 20) / 13} fill="#3C3B6E" />
+  </svg>
+);
+
+const flags: Record<Locale, () => React.JSX.Element> = { pt: PortugalFlag, en: UsaFlag };
+
+type Props = {
+  lang: Locale;
+  labels: Dictionary["language"];
+};
+
+// Plain <a>: switching locale remounts the [lang] root layout; a client render of it makes React warn about next-themes' inline script
+export function LanguageToggle({ lang, labels }: Props) {
+  return (
+    <div className="flex items-center gap-2 py-2 pl-3 pr-4 md:p-0">
+      {locales.map((locale) => {
+        const Flag = flags[locale];
+        const isActive = locale === lang;
+        return (
+          <a
+            key={locale}
+            href={`/${locale}`}
+            aria-label={labels[locale]}
+            aria-current={isActive ? "true" : undefined}
+            title={labels[locale]}
+            onClick={() => localStorage.setItem(STORAGE_KEY, locale)}
+            className={isActive ? "opacity-100" : "opacity-40 hover:opacity-100 transition-opacity"}
+          >
+            <Flag />
+          </a>
+        );
+      })}
+    </div>
+  );
+}
