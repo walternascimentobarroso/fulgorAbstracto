@@ -32,9 +32,10 @@ const Navbar = ({ lang, dict }: Props) => {
       <div className="flex max-w-6xl min-h-16 flex-wrap items-center justify-between mx-auto px-6">
         <Link
           href={`/${lang}`}
-          className="text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50"
+          aria-label="Fulgor Abstracto"
         >
-          {"Fulgor Abstracto"}
+          <img src="/logo-horizontal.svg" alt="" className="h-9 w-auto dark:hidden" />
+          <img src="/logo-horizontal-dark.svg" alt="" className="hidden h-9 w-auto dark:block" />
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
