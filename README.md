@@ -15,14 +15,14 @@ Static website for **Fulgor Abstracto**, a Portuguese company offering IT servic
 
 ## Tech stack
 
-| Area       | Tools                                   |
-| ---------- | --------------------------------------- |
-| Framework  | Next.js 16 (App Router), React 19       |
-| Language   | TypeScript                              |
-| Styling    | Tailwind CSS 4                          |
-| Theming    | next-themes                             |
-| Animations | motion                                  |
-| Icons      | Heroicons                               |
+| Area       | Tools                             |
+| ---------- | --------------------------------- |
+| Framework  | Next.js 16 (App Router), React 19 |
+| Language   | TypeScript                        |
+| Styling    | Tailwind CSS 4                    |
+| Theming    | next-themes                       |
+| Animations | motion                            |
+| Icons      | Heroicons                         |
 
 ## Getting started
 
@@ -37,11 +37,12 @@ Then open http://localhost:3000.
 
 ## Scripts
 
-| Command         | Description                         |
-| --------------- | ----------------------------------- |
-| `npm run dev`   | Start the development server        |
-| `npm run lint`  | Run ESLint                          |
-| `npm run build` | Build the static export into `out/` |
+| Command          | Description                         |
+| ---------------- | ----------------------------------- |
+| `npm run dev`    | Start the development server        |
+| `npm run lint`   | Lint and format check (Biome)       |
+| `npm run format` | Format code with Biome              |
+| `npm run build`  | Build the static export into `out/` |
 
 ## Project structure
 

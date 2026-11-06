@@ -17,7 +17,8 @@ Site estático da Fulgor Abstracto (Portugal): serviços de TI, desenvolvimento 
 ```bash
 npm install
 npm run dev     # servidor local
-npm run lint    # ESLint
+npm run lint    # Biome (lint + formatação)
+npm run format  # formatar com Biome
 npm run build   # export estático para ./out
 ```
 
