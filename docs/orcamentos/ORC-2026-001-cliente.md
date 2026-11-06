@@ -2,10 +2,10 @@
 
 Sistema de gestão e partilha de documentos
 
-| | |
-|---|---|
-| **N.º** | ORC-2026-001 |
-| **Data** | 05/11/2026 |
+|          |              |
+| -------- | ------------ |
+| **N.º**  | ORC-2026-001 |
+| **Data** | 05/11/2026   |
 
 ## Descrição do serviço
 
@@ -20,18 +20,18 @@ Instalação de um sistema de gestão documental no Mini PC da empresa, com Prox
 
 ## Serviços
 
-| Serviço | Período | Valor |
-|---|---|---|
-| Sistema de gestão e partilha de documentos — instalação, configuração, migração e formação | Projeto | 350,00 € |
-| | Subtotal | 350,00 € |
-| | IVA | À taxa legal em vigor |
-| | **Total** | **350,00 € + IVA** |
+| Serviço                                                                                    | Período   | Valor                 |
+| ------------------------------------------------------------------------------------------ | --------- | --------------------- |
+| Sistema de gestão e partilha de documentos — instalação, configuração, migração e formação | Projeto   | 350,00 €              |
+|                                                                                            | Subtotal  | 350,00 €              |
+|                                                                                            | IVA       | À taxa legal em vigor |
+|                                                                                            | **Total** | **350,00 € + IVA**    |
 
-| | |
-|---|---|
+|                      |                                                                   |
+| -------------------- | ----------------------------------------------------------------- |
 | **Prazo de entrega** | 2 a 3 dias úteis após disponibilização e validação do equipamento |
-| **Pagamento** | 50% na adjudicação e 50% na entrega, por transferência bancária |
-| **Mensalidades** | Pagamento único, sem mensalidades obrigatórias |
+| **Pagamento**        | 50% na adjudicação e 50% na entrega, por transferência bancária   |
+| **Mensalidades**     | Pagamento único, sem mensalidades obrigatórias                    |
 
 <div style="break-before: page"></div>
 
@@ -48,8 +48,8 @@ Os equipamentos não estão incluídos.
 
 ## Serviços opcionais
 
-| Serviço | Período | Valor |
-|---|---|---|
+| Serviço                                | Período | Valor         |
+| -------------------------------------- | ------- | ------------- |
 | Integração automática com Google Drive | Projeto | 80,00 € + IVA |
 | Configuração de backups em SSD externo | Projeto | 80,00 € + IVA |
 

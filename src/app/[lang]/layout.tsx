@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import RootHtml from "../components/RootHtml";
-import { getDictionary, locales, type Locale } from "../dictionaries";
+import { getDictionary, type Locale, locales } from "../dictionaries";
 import { siteUrl } from "../site";
 
 type Props = {

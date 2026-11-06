@@ -1,10 +1,10 @@
-import Navbar from "../components/Navbar";
-import HeroSection from "../components/HeroSection";
-import ServicesSection from "../components/ServicesSection";
 import BenefitsSection from "../components/BenefitsSection";
-import ProcessSection from "../components/ProcessSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
+import HeroSection from "../components/HeroSection";
+import Navbar from "../components/Navbar";
+import ProcessSection from "../components/ProcessSection";
+import ServicesSection from "../components/ServicesSection";
 import { getDictionary, type Locale } from "../dictionaries";
 import { siteUrl } from "../site";
 
@@ -32,6 +32,7 @@ export default async function Home({ params }: Props) {
       />
       <script
         type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD built from our own data
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
       />
       <a
@@ -41,7 +42,10 @@ export default async function Home({ params }: Props) {
         {dict.nav.skipToContent}
       </a>
       <Navbar lang={lang} dict={dict} />
-      <div id="content" className="relative w-full max-w-6xl mt-16 mx-auto px-6">
+      <div
+        id="content"
+        className="relative w-full max-w-6xl mt-16 mx-auto px-6"
+      >
         <HeroSection dict={dict.hero} />
         <ServicesSection dict={dict.services} />
         <BenefitsSection dict={dict.benefits} />

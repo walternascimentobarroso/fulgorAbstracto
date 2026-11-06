@@ -2,10 +2,10 @@
 
 Nome do projeto
 
-| | |
-|---|---|
-| **N.º** | ORC-AAAA-000 |
-| **Data** | DD/MM/AAAA |
+|          |              |
+| -------- | ------------ |
+| **N.º**  | ORC-AAAA-000 |
+| **Data** | DD/MM/AAAA   |
 
 ## Descrição do serviço
 
@@ -16,18 +16,18 @@ _Descreva o problema do cliente, o objetivo e o âmbito do trabalho, permitindo:
 
 ## Serviços
 
-| Serviço | Período | Valor |
-|---|---|---|
-| Nome do serviço — o que inclui | Projeto | 0,00 € |
-| | Subtotal | 0,00 € |
-| | IVA | À taxa legal em vigor |
-| | **Total** | **0,00 € + IVA** |
+| Serviço                        | Período   | Valor                 |
+| ------------------------------ | --------- | --------------------- |
+| Nome do serviço — o que inclui | Projeto   | 0,00 €                |
+|                                | Subtotal  | 0,00 €                |
+|                                | IVA       | À taxa legal em vigor |
+|                                | **Total** | **0,00 € + IVA**      |
 
-| | |
-|---|---|
-| **Prazo de entrega** | 00 dias úteis após aceitação |
-| **Pagamento** | 50% na adjudicação e 50% na entrega, por transferência bancária |
-| **Mensalidades** | Pagamento único, sem mensalidades obrigatórias |
+|                      |                                                                 |
+| -------------------- | --------------------------------------------------------------- |
+| **Prazo de entrega** | 00 dias úteis após aceitação                                    |
+| **Pagamento**        | 50% na adjudicação e 50% na entrega, por transferência bancária |
+| **Mensalidades**     | Pagamento único, sem mensalidades obrigatórias                  |
 
 <div style="break-before: page"></div>
 
@@ -44,8 +44,8 @@ Os equipamentos não estão incluídos.
 
 ## Serviços opcionais
 
-| Serviço | Período | Valor |
-|---|---|---|
+| Serviço          | Período | Valor        |
+| ---------------- | ------- | ------------ |
 | Serviço opcional | Projeto | 0,00 € + IVA |
 
 Os serviços opcionais podem ser contratados posteriormente.

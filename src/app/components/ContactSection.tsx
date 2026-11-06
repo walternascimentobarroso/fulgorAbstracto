@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
 import { MapPinIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
 import type { Dictionary } from "../dictionaries";
 
 // Web3Forms access keys are public by design: they only allow sending to the owner's inbox.
@@ -12,7 +12,8 @@ type Props = {
 
 const inputClass =
   "bg-white dark:bg-ink-950/60 border border-zinc-300 dark:border-white/10 placeholder-zinc-400 text-zinc-900 dark:text-zinc-100 text-sm rounded-xl block w-full p-3";
-const labelClass = "text-zinc-900 dark:text-white block mb-2 text-sm font-medium";
+const labelClass =
+  "text-zinc-900 dark:text-white block mb-2 text-sm font-medium";
 
 const ContactSection = ({ dict }: Props) => {
   const [submitted, setSubmitted] = useState(false);
@@ -51,35 +52,83 @@ const ContactSection = ({ dict }: Props) => {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 dark:text-white mb-4">
             {dict.title}
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-300 mb-8 max-w-md leading-relaxed">{dict.text}</p>
+          <p className="text-zinc-600 dark:text-zinc-300 mb-8 max-w-md leading-relaxed">
+            {dict.text}
+          </p>
           <p className="flex items-center gap-3 text-zinc-900 dark:text-white">
-            <MapPinIcon className="h-6 w-6 text-primary-600 dark:text-primary-400" aria-hidden="true" />
+            <MapPinIcon
+              className="h-6 w-6 text-primary-600 dark:text-primary-400"
+              aria-hidden="true"
+            />
             <span>
-              <span className="block text-xs text-zinc-500 dark:text-zinc-400">{dict.locationLabel}</span>
+              <span className="block text-xs text-zinc-500 dark:text-zinc-400">
+                {dict.locationLabel}
+              </span>
               {dict.location}
             </span>
           </p>
         </div>
         <div aria-live="polite">
           {submitted ? (
-            <p className="text-primary-700 dark:text-primary-300 font-medium">{dict.success}</p>
+            <p className="text-primary-700 dark:text-primary-300 font-medium">
+              {dict.success}
+            </p>
           ) : (
             <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="name" className={labelClass}>{dict.nameLabel}</label>
-                <input name="name" type="text" id="name" required autoComplete="name" className={inputClass} placeholder={dict.namePlaceholder} />
+                <label htmlFor="name" className={labelClass}>
+                  {dict.nameLabel}
+                </label>
+                <input
+                  name="name"
+                  type="text"
+                  id="name"
+                  required
+                  autoComplete="name"
+                  className={inputClass}
+                  placeholder={dict.namePlaceholder}
+                />
               </div>
               <div>
-                <label htmlFor="email" className={labelClass}>{dict.emailLabel}</label>
-                <input name="email" type="email" id="email" required autoComplete="email" spellCheck={false} className={inputClass} placeholder={dict.emailPlaceholder} />
+                <label htmlFor="email" className={labelClass}>
+                  {dict.emailLabel}
+                </label>
+                <input
+                  name="email"
+                  type="email"
+                  id="email"
+                  required
+                  autoComplete="email"
+                  spellCheck={false}
+                  className={inputClass}
+                  placeholder={dict.emailPlaceholder}
+                />
               </div>
               <div>
-                <label htmlFor="subject" className={labelClass}>{dict.subjectLabel}</label>
-                <input name="subject" type="text" id="subject" required className={inputClass} placeholder={dict.subjectPlaceholder} />
+                <label htmlFor="subject" className={labelClass}>
+                  {dict.subjectLabel}
+                </label>
+                <input
+                  name="subject"
+                  type="text"
+                  id="subject"
+                  required
+                  className={inputClass}
+                  placeholder={dict.subjectPlaceholder}
+                />
               </div>
               <div>
-                <label htmlFor="message" className={labelClass}>{dict.messageLabel}</label>
-                <textarea name="message" id="message" required rows={4} className={inputClass} placeholder={dict.messagePlaceholder} />
+                <label htmlFor="message" className={labelClass}>
+                  {dict.messageLabel}
+                </label>
+                <textarea
+                  name="message"
+                  id="message"
+                  required
+                  rows={4}
+                  className={inputClass}
+                  placeholder={dict.messagePlaceholder}
+                />
               </div>
               <button
                 type="submit"
@@ -89,7 +138,12 @@ const ContactSection = ({ dict }: Props) => {
                 {sending ? dict.sending : dict.send}
               </button>
               {sendFailed && (
-                <p role="alert" className="text-red-600 dark:text-red-400 text-sm">{dict.failure}</p>
+                <p
+                  role="alert"
+                  className="text-red-600 dark:text-red-400 text-sm"
+                >
+                  {dict.failure}
+                </p>
               )}
             </form>
           )}

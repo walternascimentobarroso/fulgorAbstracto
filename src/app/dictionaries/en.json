@@ -42,20 +42,41 @@
   },
   "benefits": {
     "items": [
-      { "title": "Security first", "text": "Good practices and updates at every step." },
-      { "title": "Fast response", "text": "Issues handled before they become crises." },
-      { "title": "Direct contact", "text": "Talk to the people doing the work, no middlemen." },
-      { "title": "Based in Portugal", "text": "Service in Portuguese and English." }
+      {
+        "title": "Security first",
+        "text": "Good practices and updates at every step."
+      },
+      {
+        "title": "Fast response",
+        "text": "Issues handled before they become crises."
+      },
+      {
+        "title": "Direct contact",
+        "text": "Talk to the people doing the work, no middlemen."
+      },
+      {
+        "title": "Based in Portugal",
+        "text": "Service in Portuguese and English."
+      }
     ]
   },
   "process": {
     "eyebrow": "How we work",
     "title": "From first contact to a system in production",
     "steps": [
-      { "title": "Talk", "text": "We understand your problem and what you need." },
-      { "title": "Proposal", "text": "A clear plan with scope, timeline and cost." },
+      {
+        "title": "Talk",
+        "text": "We understand your problem and what you need."
+      },
+      {
+        "title": "Proposal",
+        "text": "A clear plan with scope, timeline and cost."
+      },
       { "title": "Delivery", "text": "We build or configure, shipping often." },
-      { "title": "Follow-up", "text": "Ongoing maintenance and support after delivery." }
+      {
+        "title": "Follow-up",
+        "text": "Ongoing maintenance and support after delivery."
+      }
     ]
   },
   "contact": {

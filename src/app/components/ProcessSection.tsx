@@ -1,5 +1,5 @@
-import SectionHeading from "./SectionHeading";
 import type { Dictionary } from "../dictionaries";
+import SectionHeading from "./SectionHeading";
 
 type Props = {
   dict: Dictionary["process"];
@@ -18,8 +18,12 @@ const ProcessSection = ({ dict }: Props) => {
             <span className="block text-4xl font-bold text-primary-600/30 dark:text-primary-400/30 mb-4">
               {String(index + 1).padStart(2, "0")}
             </span>
-            <h3 className="text-lg font-semibold text-zinc-900 dark:text-white mb-2">{step.title}</h3>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{step.text}</p>
+            <h3 className="text-lg font-semibold text-zinc-900 dark:text-white mb-2">
+              {step.title}
+            </h3>
+            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              {step.text}
+            </p>
           </li>
         ))}
       </ol>

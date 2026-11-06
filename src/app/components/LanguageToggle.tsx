@@ -1,5 +1,5 @@
 "use client";
-import { locales, type Dictionary, type Locale } from "../dictionaries";
+import { type Dictionary, type Locale, locales } from "../dictionaries";
 
 const STORAGE_KEY = "lang";
 
@@ -21,13 +21,22 @@ const UsaFlag = () => (
   <svg viewBox="0 0 28 20" className="h-5 w-7 rounded-sm" aria-hidden="true">
     <rect width="28" height="20" fill="#B22234" />
     {[1, 3, 5, 7, 9, 11].map((stripe) => (
-      <rect key={stripe} y={(stripe * 20) / 13} width="28" height={20 / 13} fill="#fff" />
+      <rect
+        key={stripe}
+        y={(stripe * 20) / 13}
+        width="28"
+        height={20 / 13}
+        fill="#fff"
+      />
     ))}
     <rect width="12" height={(7 * 20) / 13} fill="#3C3B6E" />
   </svg>
 );
 
-const flags: Record<Locale, () => React.JSX.Element> = { pt: PortugalFlag, en: UsaFlag };
+const flags: Record<Locale, () => React.JSX.Element> = {
+  pt: PortugalFlag,
+  en: UsaFlag,
+};
 
 type Props = {
   lang: Locale;
@@ -49,7 +58,11 @@ export function LanguageToggle({ lang, labels }: Props) {
             aria-current={isActive ? "true" : undefined}
             title={labels[locale]}
             onClick={() => localStorage.setItem(STORAGE_KEY, locale)}
-            className={isActive ? "opacity-100" : "opacity-40 hover:opacity-100 transition-opacity"}
+            className={
+              isActive
+                ? "opacity-100"
+                : "opacity-40 hover:opacity-100 transition-opacity"
+            }
           >
             <Flag />
           </a>

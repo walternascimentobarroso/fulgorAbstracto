@@ -1,7 +1,7 @@
 "use client";
-import Link from "next/link";
-import { motion } from "motion/react";
 import { ArrowRightIcon, CheckCircleIcon } from "@heroicons/react/24/solid";
+import { motion } from "motion/react";
+import Link from "next/link";
 import type { Dictionary } from "../dictionaries";
 
 type Props = {
@@ -26,7 +26,9 @@ const HeroSection = ({ dict }: Props) => {
         </p>
         <h1 className="text-zinc-900 dark:text-white text-5xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-6">
           {dict.titleStart}{" "}
-          <span className="text-primary-600 dark:text-primary-400">{dict.titleHighlight}</span>
+          <span className="text-primary-600 dark:text-primary-400">
+            {dict.titleHighlight}
+          </span>
         </h1>
         <p className="text-zinc-600 dark:text-zinc-300 text-base lg:text-lg leading-relaxed max-w-[52ch] mb-8">
           {dict.intro}
@@ -60,7 +62,9 @@ const HeroSection = ({ dict }: Props) => {
             <span className="h-3 w-3 rounded-full bg-zinc-300 dark:bg-white/20" />
             <span className="h-3 w-3 rounded-full bg-zinc-300 dark:bg-white/20" />
           </div>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-2">{dict.statusLabel}</p>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+            {dict.statusLabel}
+          </p>
           <p className="flex items-center gap-2 font-semibold text-zinc-900 dark:text-white mb-6">
             <CheckCircleIcon className="h-5 w-5 text-emerald-500" />
             {dict.statusOk}
@@ -68,6 +72,7 @@ const HeroSection = ({ dict }: Props) => {
           <div className="flex items-end gap-1.5 h-24">
             {[40, 65, 50, 80, 60, 90, 75, 95, 70, 85].map((height, index) => (
               <span
+                // biome-ignore lint/suspicious/noArrayIndexKey: static, never reordered list
                 key={index}
                 className="flex-1 rounded-t bg-gradient-to-t from-primary-700 to-primary-400"
                 style={{ height: `${height}%` }}

@@ -1,12 +1,12 @@
 "use client";
-import { useState } from "react";
-import Link from "next/link";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import NavLink from "./NavLink";
+import Link from "next/link";
+import { useState } from "react";
+import type { Dictionary, Locale } from "../dictionaries";
+import { LanguageToggle } from "./LanguageToggle";
 import MenuOverlay from "./MenuOverlay";
 import { ModeToggle } from "./ModeToggle";
-import { LanguageToggle } from "./LanguageToggle";
-import type { Dictionary, Locale } from "../dictionaries";
+import NavLink from "./NavLink";
 
 export type NavLinkItem = {
   title: string;
@@ -30,16 +30,24 @@ const Navbar = ({ lang, dict }: Props) => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-10 border-b border-zinc-200 dark:border-white/10 bg-white/80 dark:bg-ink-950/80 backdrop-blur">
       <div className="flex max-w-6xl min-h-16 flex-wrap items-center justify-between mx-auto px-6">
-        <Link
-          href={`/${lang}`}
-          aria-label="Fulgor Abstracto"
-        >
-          <img src="/logo-horizontal.svg" alt="" className="h-9 w-auto dark:hidden" />
-          <img src="/logo-horizontal-dark.svg" alt="" className="hidden h-9 w-auto dark:block" />
+        <Link href={`/${lang}`} aria-label="Fulgor Abstracto">
+          {/* biome-ignore lint/performance/noImgElement: static export, images are unoptimized */}
+          <img
+            src="/logo-horizontal.svg"
+            alt=""
+            className="h-9 w-auto dark:hidden"
+          />
+          {/* biome-ignore lint/performance/noImgElement: static export, images are unoptimized */}
+          <img
+            src="/logo-horizontal-dark.svg"
+            alt=""
+            className="hidden h-9 w-auto dark:block"
+          />
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button
+              type="button"
               onClick={() => setNavbarOpen(true)}
               aria-label={dict.nav.openMenu}
               aria-expanded="false"
@@ -50,6 +58,7 @@ const Navbar = ({ lang, dict }: Props) => {
             </button>
           ) : (
             <button
+              type="button"
               onClick={() => setNavbarOpen(false)}
               aria-label={dict.nav.closeMenu}
               aria-expanded="true"
@@ -68,17 +77,21 @@ const Navbar = ({ lang, dict }: Props) => {
               </li>
             ))}
             <li>{languageToggle}</li>
-            <li><ModeToggle label={dict.nav.toggleTheme} /></li>
+            <li>
+              <ModeToggle label={dict.nav.toggleTheme} />
+            </li>
           </ul>
         </div>
       </div>
-      {navbarOpen ? <MenuOverlay
+      {navbarOpen ? (
+        <MenuOverlay
           id="mobile-menu"
           links={navLinks}
           languageToggle={languageToggle}
           themeLabel={dict.nav.toggleTheme}
           onNavigate={() => setNavbarOpen(false)}
-        /> : null}
+        />
+      ) : null}
     </nav>
   );
 };

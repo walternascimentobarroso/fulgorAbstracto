@@ -42,20 +42,44 @@
   },
   "benefits": {
     "items": [
-      { "title": "Segurança primeiro", "text": "Boas práticas e atualizações em todas as etapas." },
-      { "title": "Resposta rápida", "text": "Problemas tratados antes de se tornarem crises." },
-      { "title": "Contacto direto", "text": "Fala com quem faz o trabalho, sem intermediários." },
-      { "title": "Sediados em Portugal", "text": "Atendimento em português e em inglês." }
+      {
+        "title": "Segurança primeiro",
+        "text": "Boas práticas e atualizações em todas as etapas."
+      },
+      {
+        "title": "Resposta rápida",
+        "text": "Problemas tratados antes de se tornarem crises."
+      },
+      {
+        "title": "Contacto direto",
+        "text": "Fala com quem faz o trabalho, sem intermediários."
+      },
+      {
+        "title": "Sediados em Portugal",
+        "text": "Atendimento em português e em inglês."
+      }
     ]
   },
   "process": {
     "eyebrow": "Como trabalhamos",
     "title": "Do primeiro contacto ao sistema em produção",
     "steps": [
-      { "title": "Conversa", "text": "Percebemos o seu problema e o que precisa." },
-      { "title": "Proposta", "text": "Plano claro com âmbito, prazos e custos." },
-      { "title": "Execução", "text": "Desenvolvemos ou configuramos, com entregas frequentes." },
-      { "title": "Acompanhamento", "text": "Manutenção e suporte contínuos depois da entrega." }
+      {
+        "title": "Conversa",
+        "text": "Percebemos o seu problema e o que precisa."
+      },
+      {
+        "title": "Proposta",
+        "text": "Plano claro com âmbito, prazos e custos."
+      },
+      {
+        "title": "Execução",
+        "text": "Desenvolvemos ou configuramos, com entregas frequentes."
+      },
+      {
+        "title": "Acompanhamento",
+        "text": "Manutenção e suporte contínuos depois da entrega."
+      }
     ]
   },
   "contact": {

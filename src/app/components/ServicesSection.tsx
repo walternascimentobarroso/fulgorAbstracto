@@ -1,6 +1,10 @@
-import { CodeBracketIcon, ServerStackIcon, WrenchScrewdriverIcon } from "@heroicons/react/24/outline";
-import SectionHeading from "./SectionHeading";
+import {
+  CodeBracketIcon,
+  ServerStackIcon,
+  WrenchScrewdriverIcon,
+} from "@heroicons/react/24/outline";
 import type { Dictionary } from "../dictionaries";
+import SectionHeading from "./SectionHeading";
 
 type Props = {
   dict: Dictionary["services"];
@@ -23,8 +27,12 @@ const ServicesSection = ({ dict }: Props) => {
               <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-700 text-white mb-6 shadow-lg shadow-primary-600/30">
                 <Icon className="h-7 w-7" aria-hidden="true" />
               </span>
-              <h3 className="text-xl font-semibold text-zinc-900 dark:text-white mb-3">{service.title}</h3>
-              <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">{service.text}</p>
+              <h3 className="text-xl font-semibold text-zinc-900 dark:text-white mb-3">
+                {service.title}
+              </h3>
+              <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                {service.text}
+              </p>
             </li>
           );
         })}
