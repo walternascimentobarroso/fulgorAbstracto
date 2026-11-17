@@ -1,5 +1,7 @@
 "use client";
 import { MapPinIcon } from "@heroicons/react/24/outline";
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
+import { motion } from "motion/react";
 import { useState } from "react";
 import type { Dictionary } from "../dictionaries";
 
@@ -11,9 +13,16 @@ type Props = {
 };
 
 const inputClass =
-  "bg-white dark:bg-ink-950/60 border border-zinc-300 dark:border-white/10 placeholder-zinc-400 text-zinc-900 dark:text-zinc-100 text-sm rounded-xl block w-full p-3";
+  "bg-white dark:bg-ink-950/60 border border-zinc-300 dark:border-white/10 placeholder-zinc-400 text-zinc-900 dark:text-zinc-100 text-sm rounded-xl block w-full p-3 transition-colors duration-150 hover:border-zinc-400 dark:hover:border-white/20 focus:border-primary-500 dark:focus:border-primary-400";
 const labelClass =
   "text-zinc-900 dark:text-white block mb-2 text-sm font-medium";
+
+const reveal = (index: number) => ({
+  initial: { opacity: 0, y: 12, filter: "blur(3px)" },
+  whileInView: { opacity: 1, y: 0, filter: "blur(0px)" },
+  viewport: { once: true, amount: 0.3 },
+  transition: { duration: 0.5, delay: index * 0.04, ease: [0.22, 1, 0.36, 1] as const },
+});
 
 const ContactSection = ({ dict }: Props) => {
   const [submitted, setSubmitted] = useState(false);
@@ -70,12 +79,21 @@ const ContactSection = ({ dict }: Props) => {
         </div>
         <div aria-live="polite">
           {submitted ? (
-            <p className="text-primary-700 dark:text-primary-300 font-medium">
+            <motion.p
+              initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.5, ease: [0.34, 1.36, 0.64, 1] }}
+              className="flex items-center gap-3 text-primary-700 dark:text-primary-300 font-medium"
+            >
+              <CheckCircleIcon
+                className="h-8 w-8 shrink-0"
+                aria-hidden="true"
+              />
               {dict.success}
-            </p>
+            </motion.p>
           ) : (
             <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-              <div>
+              <motion.div {...reveal(0)}>
                 <label htmlFor="name" className={labelClass}>
                   {dict.nameLabel}
                 </label>
@@ -88,8 +106,8 @@ const ContactSection = ({ dict }: Props) => {
                   className={inputClass}
                   placeholder={dict.namePlaceholder}
                 />
-              </div>
-              <div>
+              </motion.div>
+              <motion.div {...reveal(1)}>
                 <label htmlFor="email" className={labelClass}>
                   {dict.emailLabel}
                 </label>
@@ -103,8 +121,8 @@ const ContactSection = ({ dict }: Props) => {
                   className={inputClass}
                   placeholder={dict.emailPlaceholder}
                 />
-              </div>
-              <div>
+              </motion.div>
+              <motion.div {...reveal(2)}>
                 <label htmlFor="subject" className={labelClass}>
                   {dict.subjectLabel}
                 </label>
@@ -116,8 +134,8 @@ const ContactSection = ({ dict }: Props) => {
                   className={inputClass}
                   placeholder={dict.subjectPlaceholder}
                 />
-              </div>
-              <div>
+              </motion.div>
+              <motion.div {...reveal(3)}>
                 <label htmlFor="message" className={labelClass}>
                   {dict.messageLabel}
                 </label>
@@ -129,21 +147,25 @@ const ContactSection = ({ dict }: Props) => {
                   className={inputClass}
                   placeholder={dict.messagePlaceholder}
                 />
-              </div>
-              <button
+              </motion.div>
+              <motion.button
+                {...reveal(4)}
                 type="submit"
                 disabled={sending}
                 className="bg-primary-600 hover:bg-primary-700 text-white active:scale-[0.98] transition font-semibold py-3 px-5 rounded-full w-full disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {sending ? dict.sending : dict.send}
-              </button>
+              </motion.button>
               {sendFailed && (
-                <p
+                <motion.p
                   role="alert"
+                  initial={{ x: 0 }}
+                  animate={{ x: [0, -8, 8, -6, 6, 0] }}
+                  transition={{ duration: 0.4 }}
                   className="text-red-600 dark:text-red-400 text-sm"
                 >
                   {dict.failure}
-                </p>
+                </motion.p>
               )}
             </form>
           )}

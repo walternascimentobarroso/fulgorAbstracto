@@ -1,4 +1,5 @@
 import type { Dictionary } from "../dictionaries";
+import RevealItem from "./RevealItem";
 import SectionHeading from "./SectionHeading";
 
 type Props = {
@@ -11,8 +12,9 @@ const ProcessSection = ({ dict }: Props) => {
       <SectionHeading eyebrow={dict.eyebrow} title={dict.title} />
       <ol className="grid gap-6 md:grid-cols-4">
         {dict.steps.map((step, index) => (
-          <li
+          <RevealItem
             key={step.title}
+            index={index}
             className="relative rounded-3xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 p-6"
           >
             <span className="block text-4xl font-bold text-primary-600/30 dark:text-primary-400/30 mb-4">
@@ -24,7 +26,7 @@ const ProcessSection = ({ dict }: Props) => {
             <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
               {step.text}
             </p>
-          </li>
+          </RevealItem>
         ))}
       </ol>
     </section>

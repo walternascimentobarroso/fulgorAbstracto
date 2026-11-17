@@ -1,5 +1,6 @@
 "use client";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { useState } from "react";
 import type { Dictionary, Locale } from "../dictionaries";
@@ -45,29 +46,31 @@ const Navbar = ({ lang, dict }: Props) => {
           />
         </Link>
         <div className="mobile-menu block md:hidden">
-          {!navbarOpen ? (
-            <button
-              type="button"
-              onClick={() => setNavbarOpen(true)}
-              aria-label={dict.nav.openMenu}
-              aria-expanded="false"
-              aria-controls="mobile-menu"
-              className="flex items-center px-3 py-2 border rounded-lg border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white hover:border-black dark:hover:border-white"
-            >
-              <Bars3Icon className="h-5 w-5" />
-            </button>
-          ) : (
-            <button
-              type="button"
-              onClick={() => setNavbarOpen(false)}
-              aria-label={dict.nav.closeMenu}
-              aria-expanded="true"
-              aria-controls="mobile-menu"
-              className="flex items-center px-3 py-2 border rounded-lg border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white hover:border-black dark:hover:border-white"
-            >
-              <XMarkIcon className="h-5 w-5" />
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={() => setNavbarOpen(!navbarOpen)}
+            aria-label={navbarOpen ? dict.nav.closeMenu : dict.nav.openMenu}
+            aria-expanded={navbarOpen}
+            aria-controls="mobile-menu"
+            className="relative flex h-9 w-11 items-center justify-center border rounded-lg border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white hover:border-black dark:hover:border-white"
+          >
+            <AnimatePresence initial={false}>
+              <motion.span
+                key={navbarOpen ? "close" : "open"}
+                initial={{ opacity: 0, scale: 0.8, filter: "blur(2px)" }}
+                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                exit={{ opacity: 0, scale: 0.8, filter: "blur(2px)" }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+                className="absolute"
+              >
+                {navbarOpen ? (
+                  <XMarkIcon className="h-5 w-5" />
+                ) : (
+                  <Bars3Icon className="h-5 w-5" />
+                )}
+              </motion.span>
+            </AnimatePresence>
+          </button>
         </div>
         <div className="menu hidden md:block md:w-auto" id="navbar">
           <ul className="flex items-center p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
@@ -83,15 +86,26 @@ const Navbar = ({ lang, dict }: Props) => {
           </ul>
         </div>
       </div>
-      {navbarOpen ? (
-        <MenuOverlay
-          id="mobile-menu"
-          links={navLinks}
-          languageToggle={languageToggle}
-          themeLabel={dict.nav.toggleTheme}
-          onNavigate={() => setNavbarOpen(false)}
-        />
-      ) : null}
+      <AnimatePresence initial={false}>
+        {navbarOpen ? (
+          <motion.div
+            key="mobile-menu"
+            initial={{ height: 0, opacity: 0, filter: "blur(2px)" }}
+            animate={{ height: "auto", opacity: 1, filter: "blur(0px)" }}
+            exit={{ height: 0, opacity: 0, filter: "blur(2px)" }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden md:hidden"
+          >
+            <MenuOverlay
+              id="mobile-menu"
+              links={navLinks}
+              languageToggle={languageToggle}
+              themeLabel={dict.nav.toggleTheme}
+              onNavigate={() => setNavbarOpen(false)}
+            />
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </nav>
   );
 };

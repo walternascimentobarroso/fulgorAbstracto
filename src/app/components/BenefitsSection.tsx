@@ -5,6 +5,7 @@ import {
   ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
 import type { Dictionary } from "../dictionaries";
+import RevealItem from "./RevealItem";
 
 type Props = {
   dict: Dictionary["benefits"];
@@ -19,7 +20,11 @@ const BenefitsSection = ({ dict }: Props) => {
         {dict.items.map((benefit, index) => {
           const Icon = icons[index];
           return (
-            <li key={benefit.title} className="text-center">
+            <RevealItem
+              key={benefit.title}
+              index={index}
+              className="text-center"
+            >
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-primary-500/40 text-primary-600 dark:text-primary-400 mb-4">
                 <Icon className="h-6 w-6" aria-hidden="true" />
               </span>
@@ -29,7 +34,7 @@ const BenefitsSection = ({ dict }: Props) => {
               <p className="text-sm text-zinc-600 dark:text-zinc-400">
                 {benefit.text}
               </p>
-            </li>
+            </RevealItem>
           );
         })}
       </ul>

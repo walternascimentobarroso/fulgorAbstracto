@@ -3,6 +3,7 @@ import { ArrowRightIcon, CheckCircleIcon } from "@heroicons/react/24/solid";
 import { motion } from "motion/react";
 import Link from "next/link";
 import type { Dictionary } from "../dictionaries";
+import BlurText from "./BlurText";
 
 type Props = {
   dict: Dictionary["hero"];
@@ -18,16 +19,16 @@ const HeroSection = ({ dict }: Props) => {
     <section className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center py-16 lg:py-28">
       <motion.div
         {...enter}
-        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         className="md:col-span-7"
       >
         <p className="text-xs font-semibold tracking-[0.3em] uppercase text-primary-600 dark:text-primary-400 mb-5">
           {dict.eyebrow}
         </p>
         <h1 className="text-zinc-900 dark:text-white text-5xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-6">
-          {dict.titleStart}{" "}
+          <BlurText text={dict.titleStart} delay={80} />{" "}
           <span className="text-primary-600 dark:text-primary-400">
-            {dict.titleHighlight}
+            <BlurText text={dict.titleHighlight} delay={80} />
           </span>
         </h1>
         <p className="text-zinc-600 dark:text-zinc-300 text-base lg:text-lg leading-relaxed max-w-[52ch] mb-8">
@@ -36,10 +37,13 @@ const HeroSection = ({ dict }: Props) => {
         <div className="flex flex-col sm:flex-row gap-3">
           <Link
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold bg-primary-600 hover:bg-primary-700 text-white active:scale-[0.98] transition"
+            className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold bg-primary-600 hover:bg-primary-700 text-white active:scale-[0.98] transition"
           >
             {dict.primaryCta}
-            <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
+            <ArrowRightIcon
+              className="h-4 w-4 transition-transform duration-250 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-1 motion-reduce:transition-none"
+              aria-hidden="true"
+            />
           </Link>
           <Link
             href="#services"
@@ -51,7 +55,7 @@ const HeroSection = ({ dict }: Props) => {
       </motion.div>
       <motion.div
         {...enter}
-        transition={{ duration: 0.5, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         className="md:col-span-5 relative"
         aria-hidden="true"
       >

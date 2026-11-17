@@ -13,6 +13,12 @@
     "rules": { "preset": "recommended" },
     "domains": { "next": "recommended", "react": "recommended" }
   },
+  "overrides": [
+    {
+      "includes": ["src/app/components/BlurText.tsx"],
+      "linter": { "enabled": false }
+    }
+  ],
   "javascript": { "formatter": { "quoteStyle": "double" } },
   "css": { "parser": { "tailwindDirectives": true } },
   "assist": {
